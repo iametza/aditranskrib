@@ -1,0 +1,9 @@
+RewriteEngine On
+#RewriteOptions MaxRedirects=1
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?ids=$1 [L,QSA]
+
+# Hau gabe srt fitxategien aurrebistak bistaratzean ñ-ak ez dira ondo ikusten.
+AddCharset UTF-8 .srt
