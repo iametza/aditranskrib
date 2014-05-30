@@ -22,7 +22,7 @@
 		?>
         
 		$(".parrafo_checkbox").change(function(event) {
-			console.log($(this));
+			//console.log($(this));
 			
 			if ($(this).hasClass("tarte_hasiera_da")) {
 				
@@ -182,7 +182,7 @@
 					// eta hizlariaren izena stext-en aurretik.
 					if (tartearen_hasiera_da === true) {
 						
-						console.log(hurrengo_tartea + ". tartearen hasierako lerroa: " +  sub.id);
+						//console.log(hurrengo_tartea + ". tartearen hasierako lerroa: " +  sub.id);
 						
 						outputString += '<p><span data-ms="' + stime + '">' + hizlariak[tarteak[hurrengo_tartea].id_hizlaria].aurrizkia + " " + stext + '</span> ';
 						
@@ -214,7 +214,7 @@
 				// Hala bada </p> bat gehitu behar dugu.
 				if (hurrengo_tartea < tarteak.length && tarteak[hurrengo_tartea].amaiera === sub.id) {
 					
-					console.log(hurrengo_tartea + ". tartearen amaierako lerroa: " + sub.id);
+					//console.log(hurrengo_tartea + ". tartearen amaierako lerroa: " + sub.id);
 					
 					outputString = outputString + "</p>";
 					
@@ -289,7 +289,7 @@
 						
 						tarteak.push(tartea);
 						
-						console.log(tarteak);
+						//console.log(tarteak);
 				
 						// Eta tarte berriaren hasierako balioak gordeko ditugu.
 						hasierako_indizea = indizea;
@@ -335,7 +335,7 @@
 			var srt = azpitituluak_testuak[1];
 			
 			var ht = parseSRT(srt, tarteak, parrafo_hasierak);
-			console.log(ht);
+			//console.log(ht);
         
 			$.post("<?php echo $url_base . "editatu-hipertranskribapena&edit_id=" . $editatu_hipertranskribapena->id_eztabaida . "&h_id=" . $editatu_hipertranskribapena->h_id; ?>", {
 				"gorde": "gorde",
@@ -345,7 +345,7 @@
 				"tarteak": tarteak,
 				"parrafo_hasierak": parrafo_hasierak
 			}, function(data) {
-				console && console.log(data);
+				//console && console.log(data);
 				
 				if (data["arrakasta"]) {
                     // Behar bezala gorde dugunez, eztabaidaren orrira berbideratu.

@@ -93,7 +93,7 @@
 		
 		// Hizkuntza kopuruaren arabera beharrezko fieldset-ak sortu.
 		$.post("<?php echo $url_base; ?>editatu_hizlaria", {"id_hizlaria": id_hizlaria}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			// Testuen fieldseta garbitu.
 			$("#editatu_hizlaria_fieldset_edukinontzia").empty();
@@ -165,7 +165,7 @@
 		$("#editatu_hizlaria_fieldset_edukinontzia").empty();
 		
 		$.post("<?php echo $url_base; ?>editatu_hizlaria", {"id_hizlaria": id_hizlaria}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				
@@ -258,7 +258,7 @@
 		
 		// Hizkuntza kopuruaren arabera behar adina fieldset gehitu
 		$.post("<?php echo $url_base; ?>editatu_momentua", {"id_momentua": 0}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				for (var i = 0; i < data["hizkuntzak"].length; i++) {
@@ -299,7 +299,7 @@
 		$("#editatu_momentua_fieldset_edukinontzia").empty();
 		
 		$.post("<?php echo $url_base; ?>editatu_momentua", {"id_momentua": id_momentua}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				// Irudirik badago bakarrik gehitu behar dira Ikusi eta Ezabatu
@@ -356,7 +356,7 @@
 		
 		// Hizlarien zerrenda eskuratu zerbitzaritik eta select-ari gehitu.
 		$.post("<?php echo $url_base; ?>itzuli_hizlariak", {"id_eztabaida": id_eztabaida, "h_id": <?php echo $hizkuntza['id']; ?>}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				
@@ -398,7 +398,7 @@
 		
 		// Infoesteka moten zerrenda eskuratu zerbitzaritik eta select-ari gehitu.
 		$.post("<?php echo $url_base; ?>itzuli_infoesteka_motak", {"h_id": <?php echo $hizkuntza['id']; ?>}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				
@@ -443,7 +443,7 @@
 		
 		// Hizlarien zerrenda eskuratu zerbitzaritik eta select-ari gehitu.
 		$.post("<?php echo $url_base; ?>itzuli_hizlariak", {"id_eztabaida": id_eztabaida, "h_id": <?php echo $hizkuntza['id']; ?>}, function(data) {
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				
@@ -489,7 +489,7 @@
 		// Infoestekaren datuak eskuratu zerbitzaritik eta bistaratu.
 		$.post("<?php echo $url_base; ?>itzuli_infoesteka", {"id_infoesteka": id_infoesteka_grafismoa, "h_id": <?php echo $hizkuntza['id']; ?>}, function(data) {
 			
-			console && console.log(data);
+			//console && console.log(data);
 			
 			if (data["arrakasta"]) {
 				
@@ -683,7 +683,7 @@
 			// hizlariak_taula-ri gehitu diogun katea.
 			var katea = "";
 			
-			console.log(responseJSON);
+			//console.log(responseJSON);
 			
 			if (responseJSON["arrakasta"]) {
 				if (id_hizlaria !== "0") {
@@ -760,7 +760,7 @@
 			$.post("<?php echo $url_base; ?>editatu_hizlaria", 
 				balioak,
 				function(data) {
-					console && console.log(data);
+					//console && console.log(data);
 					
 					if (data["arrakasta"]) {
 						if (id_hizlaria !== "0") {
@@ -898,7 +898,7 @@
 				balioak,
 				function(data) {
 					
-					console && console.log(data);
+					//console && console.log(data);
 					
 					if (data["arrakasta"]) {
 						
@@ -987,7 +987,7 @@
 				balioak,
 				function(data) {
 					
-					console && console.log(data);
+					//console && console.log(data);
 					
 					if (data["arrakasta"]) {
 						

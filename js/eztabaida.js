@@ -66,7 +66,7 @@ $(document).ready(function(){
 
 		$('#chart').empty();
 		var barWidth = (width / data.length) - 4;
-		console.log("barWidth: " + barWidth);
+		//console.log("barWidth: " + barWidth);
 		var height = 70;
 		var bottomPadding = 20;
 		
@@ -86,7 +86,7 @@ $(document).ready(function(){
 			colorlist[i] = eztabaida.hizlariak[eztabaida.hizlari_bilagarriak[i]].kolorea;
 		}
 		
-		console.log(colorlist);
+		//console.log(colorlist);
 		
 		var x = d3.scale.linear().domain([0, data.length]).range([0, width]);
 		var y = d3.scale.linear().domain([0, d3.max(data, function(datum) { return datum.s; })]).
@@ -141,33 +141,33 @@ $(document).ready(function(){
 			// Bideoak 0 eta 1 minutu artean irauten badu hau gabe zerbait agertzen da alboetan. Honekin ezer ez.
 			xScale = d3.scale.linear().domain([1, (iraupena_min - 1)]).range([width / iraupena_min, width - width / iraupena_min]);
 			num_ticks = 0;
-			console.log("< bat");
+			//console.log("< bat");
 		} else if (iraupena_min === 2) {
 			// Bideoak 1 eta 2 minutu artean irauten badu marra bakarrak agertu behar du.
 			// Marra bakarra marrazteko modurik ez dut aurkitu. Bi marra marrazten ditut (0 eta 1) baina 0a ez dago bistan.
 			xScale = d3.scale.linear().domain([0, 1]).range([-width, width / 2 - 2]);
 			num_ticks = 1;
-			console.log("1 < iraupena < 2");
+			//console.log("1 < iraupena < 2");
 		} else if (iraupena_min === 3) {
 			xScale = d3.scale.linear().domain([1, (iraupena_min - 1)]).rangeRound([width / iraupena_min, width - width / iraupena_min]);
 			num_ticks = 1;
-			console.log("2 < iraupena < 3");
+			//console.log("2 < iraupena < 3");
 		} else if (iraupena_min >= 4 && iraupena_min <= 6) {
 			xScale = d3.scale.linear().domain([1, (iraupena_min - 1)]).rangeRound([width / iraupena_min, width - width / iraupena_min]);
 			num_ticks = iraupena_min - 1;
-			console.log("4 <= iraupena <= 6");
+			//console.log("4 <= iraupena <= 6");
 		} else if (iraupena_min <= denbora_muga) {
 			xScale = d3.scale.linear().domain([1, (iraupena_min - 1)]).range([width / iraupena_min, width - width / iraupena_min]);
 			num_ticks = iraupena_min;
-			console.log("iraupena <= " + denbora_muga);
+			//console.log("iraupena <= " + denbora_muga);
 		} else {
 			xScale = d3.scale.linear().domain([5, iraupena_min_bost - 5]).range([width / (iraupena_min_bost / 5), width - width / (iraupena_min_bost / 5)]);
 			num_ticks = iraupena_min_bost / 5;
-			console.log("else");
+			//console.log("else");
 		}
 		
-		console.log("Barra kopurua: " + bars);
-		console.log("num_ticks: " + num_ticks);
+		//console.log("Barra kopurua: " + bars);
+		//console.log("num_ticks: " + num_ticks);
 		
 		var xAxis = d3.svg.axis()
 		 .scale(xScale)
@@ -717,10 +717,10 @@ $(document).ready(function(){
 			//data[h].m = hitsDetails[h];
 		}
 
-		console.log("-------------");
-		console.log(data);
-		console.log(hitsDetails);
-		console.log("-------------");
+		//console.log("-------------");
+		//console.log(data);
+		//console.log(hitsDetails);
+		//console.log("-------------");
 		
 		// The chart gets drawn twice now to fix Opera bug and to make it slide in nicely for other browsers.
 		drawBarChart(data); // Moved down to animated callback. Opera bug on 1st chart.
@@ -815,13 +815,13 @@ $(document).ready(function(){
 		// e.pageY: dokumentuaren goiarekiko posizio absolutua. Lehen e.clientY erabiltzen zuen eta hori gurasoarekiko posizio erlatiboa da.
 		var piece = (maxData-1) - (Math.floor((e.pageY - top) / (height / maxData)));
 		
-		console.log("-------------");
-		console.log("e.pageY: " + e.pageY);
-		console.log("top: " + top);
-		console.log("e.pageY - top: " + (e.pageY - top));
-		console.log("height: " + height);
-		console.log("piece: " + piece);
-		console.log("-------------");
+		//console.log("-------------");
+		//console.log("e.pageY: " + e.pageY);
+		//console.log("top: " + top);
+		//console.log("e.pageY - top: " + (e.pageY - top));
+		//console.log("height: " + height);
+		//console.log("piece: " + piece);
+		//console.log("-------------");
 		
 		// text items are placed next to rects affecting their indexes so we need to mod
 		
@@ -1234,7 +1234,7 @@ $(document).ready(function(){
 	pop.parseSRT(eztabaida.azpitituluak, {target: "bideoa-azpitituluak"});
 	
 	for (var i = 0; i < eztabaida.grafismoak.length; i++) {
-		console.log(eztabaida.grafismoak[i]);
+		//console.log(eztabaida.grafismoak[i]);
 		pop.lowerThird({
 			"start": eztabaida.grafismoak[i].hasiera,
 			"end": eztabaida.grafismoak[i].amaiera,
@@ -1280,7 +1280,7 @@ $(document).ready(function(){
 	}
 	
 	for (var i = 0; i < eztabaida.infoak.length; i++) {
-		console.log(eztabaida.infoak[i]);
+		//console.log(eztabaida.infoak[i]);
 		pop.code({
 			start: eztabaida.infoak[i].hasiera,
 			end: eztabaida.infoak[i].amaiera,

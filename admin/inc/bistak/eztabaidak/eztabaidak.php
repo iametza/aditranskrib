@@ -35,8 +35,8 @@
 			timeFormat: "HH:mm:ss",
 			onClose: function(dateText, inst) {
 				var id_eztabaida = $("#" + inst.id).attr("data-id-eztabaida");
-				console.log("Data: " + dateText);
-				console.log("id_eztabaida: " + $("#" + inst.id).attr("data-id-eztabaida"));
+				//console.log("Data: " + dateText);
+				//console.log("id_eztabaida: " + $("#" + inst.id).attr("data-id-eztabaida"));
 				document.location='<?php echo $url_base . $url_param; ?>&aldatu_data_id=' + id_eztabaida + '&data=' + dateText;
 			}
 		});
