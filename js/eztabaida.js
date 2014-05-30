@@ -259,6 +259,9 @@ $(document).ready(function(){
 			// Bilatu beharreko hitz bat baino gehiago badaude %20 izango dute hutsuneen ordez. Berriz ere hutsuneak jarriko ditugu.
 			s = s.split('%20').join(' ');
 			
+			// * komodinen ordez %2A dago. Berriz ere asteriskoak jarriko ditugu.
+			s = s.split('%2A').join('*');
+			
 			// Bideoaren metadatuak kargatu arte itxaron behar dugu.
 			// Erabiltzaileak bilaketa normal bat egiten duenean ez da beharrezkoa itxarotea, bideoa dagoeneko kargatuta egongo baita.
 			// Baina URLan kodetutako bilaketetan (adibidez, ?k=gaur) metadatuak kargatuta daudela ziurtatu behar dugu, bestela pop.duration() NaN baita.
@@ -744,6 +747,10 @@ $(document).ready(function(){
 		}
 		 
 		var keyword = searchStr.split(' ').join('%20');
+		
+		// Asteriskoak '%2A'rekin ordezkatu.
+		keyword = keyword.replace(/\*/g, '%2A');
+		
 		var theTweet = "Zenbat aldiz aipatu dute '" + searchStr + "'? " + url + "?k=" + keyword + " " + eztabaida.hashTag;//+"&e="+e;  
 			 
 		$('.share-snippet').empty();
